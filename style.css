@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 /* ######## Global ######## */
 *{
@@ -34,6 +35,7 @@ body{
     
     /* #### h1 #### */
     h1{
+        font-family: 'Source Serif Pro';
         font-weight: var(--Regular);
         font-size: 36px;
         letter-spacing: -4%;
@@ -79,8 +81,17 @@ body{
         letter-spacing: -2%;
     }
 
+    /* #### p1 medium #### */
+    .paragraph_1_medium{
+        font-family: "Radio Canada Big", sans-serif;
+        font-weight: var(--Medium);
+        font-size: 20px;
+        letter-spacing: -2%;
+    }
+
     /* #### p2 #### */
     .paragraph_2{
+        font-family: 'Source Serif Pro';
         font-weight: var(--Regular);
         font-size: 18px;
         letter-spacing: -3%;
@@ -108,6 +119,46 @@ body{
         font-weight: var(--Regular);
         font-size: 14px;
     }
+
+    /* #### button primary #### */
+    .button_primary{
+        font-family: 'Geist Mono', serif;
+        padding: 16px;
+        background-color: var(--Paragraph_1);
+        color: white;
+        font-size: 14px;
+        font-weight: var(--Medium);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        .bullet{
+            width: 4px;
+            height: 4px;
+            background-color: var(--Background_1);
+        }
+    }
+
+    .button_secondary{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background-color: var(--Paragraph_1);
+        color: white;
+        padding: 12px;
+        font-family: 'Geist Mono', serif;
+        font-weight: var(--Medium);
+        font-size: 14px;
+    }
+
+    .caption{
+        font-family: 'Geist Mono', serif;
+        font-weight: var(--Regular);
+        font-size: 14px;
+        color: var(--Paragraph_2);
+    }
 }
 
 
@@ -117,12 +168,14 @@ nav{
         display: none;
     }
     .navigation_mobile{
+        transition: all 300ms cubic-bezier(0, 0, 0, 1);
         .nav_top{
             display: flex;
             justify-content: space-between;
             padding: 20px;
             height: 60px;
-            background: blur(64px);
+            backdrop-filter: blur(64px);
+            background-color: #FFFFFF01;
             .logo{
                 width: 122px;
             }
@@ -140,14 +193,318 @@ nav{
         }
         .dropdown_content{
             padding: 0 20px 20px 20px;
-            display: flex;
+            display: none;
             flex-direction: column;
             gap: 24px;
+            box-shadow: 0 4px 6px -4px #00000012;
+            box-shadow: 0 8px 8px -4px #00000008;
+            background-color: var(--Background_1);
             .menu_items{
                 .list_item{
                     padding: 24px 0;
+                    border-bottom: 1px solid var(--Divider);
                 }
             }
+            .button_primary{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+
+/* ######## Into Features Section ######## */
+.into_features_section{
+    .gradient_background{
+        position: absolute;
+        z-index: -1;
+        background: var(--Background_3);
+        width: 375px;
+        height: 536.1px;
+        top: 0;
+        left: 0;
+    }
+    .intro_section{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding: 120px 20px 0 20px;
+        text-align: center;
+        .intro_content{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            .header_text{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .button_row{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 12px;
+                a{
+                    padding: 16px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    background-color: var(--Paragraph_1);
+                    color: white;
+                    .bullet{
+                        width: 4px;
+                        height: 4px;
+                        background-color: var(--Background_1);
+                    }
+                }
+                a:first-child{
+                    width: 164px;
+                }
+                a:nth-child(2){
+                    width: 214px;
+                }
+            }
+        }
+    }
+    .features_section{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 40px 20px;
+        h4{
+            text-align: center;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            .feature_list{
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                .item_list{
+                    ul{
+                        padding: 20px 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                        border-top: 1px solid var(--Divider);
+                        list-style: none;
+                        padding-left: 0;
+                        .header{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ######## Value Section ######## */
+.value_section{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px 20px;
+    background-image: url(img/Values_section.png);
+    .header{
+        text-align: center;
+        .header_1{
+            font-family: sour;
+            font-size: 36px;
+        }
+    }
+    .value_modules{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        .container{
+            padding: 40px;
+            background-color: var(--Background_1);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            .content{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                h2{
+                    font-size: 20px;
+                    font-weight: var(--Medium);
+                }
+                p{
+                    font-family: 'Source Serif Pro';
+                    font-weight: var(--Regular);
+                    font-size: 20px;
+                    line-height: 120%;
+                    letter-spacing: -4%;
+                }
+            }
+        }
+    }
+}
+
+
+/* ######## Case Study Section ######## */
+.case_study_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    .case_study_module{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        border-radius: 16px;
+        img{
+            width: 100%;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            .paragraph{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    }
+}
+
+
+/* ######## Blog Section ######## */
+.blog_section{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 20px;
+    h4{
+        text-align: center;
+    }
+    .article_body{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .journal_list{
+            .journal_item{
+                display: flex;
+                gap: 16px;
+                border-bottom: 1px solid var(--Divider);
+                .content{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    padding: 24px 0;
+                    .role_details{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        .details{
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        }
+                    }
+                }
+            }
+            .journal_item_1{
+                border-top: 1px solid var(--Divider);
+            }
+        }
+        .sticker_container{
+            display: none;
+        }
+    }
+}
+
+
+/* ######## Textimonial Section ######## */
+.testimonial_section{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 40px 20px;
+    .content{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .quote{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            img{
+                width: 24px;
+                height: 20px;
+            }
+            p:first-child{
+                font-family: "Radio Canada Big", sans-serif;
+                font-weight: var(--Medium);
+                font-size: 20px;
+                letter-spacing: -2%;
+            }
+        }
+    }
+}
+
+
+/* ######## Call To Action ######## */
+.call_to_action{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+    padding: 40px 20px;
+    a{
+        width: 164px;
+    }
+}
+
+
+/* ######## Footer ######## */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 16px;
+    padding: 40px 20px 20px 20px;
+    background-color: var(--Backgorund_4);
+    color: var(--Paragraph_3);
+    text-align: center;
+    .footer_header{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .footer_links{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            a{
+                color: var(--Paragraph_3);
+            }
+        }
+    }
+    .footer_image{
+        opacity: 90%;
+        mix-blend-mode: multiply;
+        height: 120px;
+        object-fit: cover;
+    }
+    .logo_container{
+        img{
+            height: 55.11px;
         }
     }
 }
