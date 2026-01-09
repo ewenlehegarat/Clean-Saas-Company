@@ -138,6 +138,10 @@ body{
             width: 4px;
             height: 4px;
             background-color: var(--Background_1);
+            transition: opacity 800ms ease-in-out;
+        }
+        p{
+            transition: opacity 800ms ease-in-out;
         }
     }
 
@@ -153,6 +157,19 @@ body{
         font-family: 'Geist Mono', serif;
         font-weight: var(--Medium);
         font-size: 14px;
+        p{
+            transition: opacity 800ms ease-in-out;
+        }
+    }
+
+    .button_primary:hover, .button_secondary:hover{
+        box-shadow: 0 4px 6px -4px #00000012, 0 8px 8px -4px #00000008;
+        p{
+            opacity: 80%;
+        }
+        .bullet{
+            opacity: 80%;
+        }
     }
 }
 
@@ -173,8 +190,24 @@ nav{
             height: 60px;
             backdrop-filter: blur(64px);
             background-color: #FFFFFF01;
+            .menu_icon{
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: opacity 300ms ease-in-out;
+                img{
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+            .menu_icon:hover{
+                opacity: 50%;
+            }
             .logo{
                 width: 122px;
+                cursor: pointer;
             }
             a{
                 width: 24px;
@@ -200,6 +233,15 @@ nav{
                 .list_item{
                     padding: 24px 0;
                     border-bottom: 1px solid var(--Divider);
+                    cursor: pointer;
+                    a{
+                        transition: opacity 300ms ease-in-out;
+                    }
+                }
+                .list_item:hover{
+                    a{
+                        opacity: 55%;
+                    }
                 }
             }
             .button_primary{
@@ -396,6 +438,7 @@ nav{
                 gap: 16px;
                 border-bottom: 1px solid var(--Divider);
                 .content{
+                    width: 100%;
                     display: flex;
                     flex-direction: column;
                     gap: 16px;
@@ -410,6 +453,14 @@ nav{
                             gap: 8px;
                         }
                     }
+                }
+                p{
+                    transition: opacity 300ms ease-in-out;
+                }
+            }
+            .journal_item:hover{
+                p{
+                    opacity: 65%;
                 }
             }
             .journal_item_1{
@@ -493,6 +544,10 @@ footer{
             gap: 16px;
             a{
                 color: var(--Paragraph_3);
+                transition: opacity 300ms ease-in-out;
+            }
+            a:hover{
+                opacity: 80%;
             }
         }
     }
@@ -527,9 +582,29 @@ footer{
                     justify-content: center;
                     align-items: center;
                     color: var(--Paragraph_1);
+                    cursor: pointer;
+                    transition: opacity 300ms ease-in-out;
+                }
+                a:hover{
+                    opacity: 65%;
                 }
                 a:nth-child(5){
                     gap: 4px;
+                    .arrow{
+                        width: 14px;
+                        height: 19px;
+                        display: flex;
+                        align-items: center;
+                        transition: all 700ms ease-in-out;
+                        img{
+                            width: 9px;
+                        }
+                    }
+                }
+                a:nth-child(5):hover{
+                    .arrow{
+                        transform: translateX(2.77px);
+                    }
                 }
             }
         }
@@ -623,13 +698,7 @@ footer{
     /* ######## Into Features Section ######## */
     .into_features_section{
         .gradient_background{
-            position: absolute;
-            z-index: -1;
-            background: var(--Background_3);
-            width: 100%;
             height: 759.07px;
-            top: 0;
-            left: 0;
         }
         .intro_section{
             gap: 56px;
@@ -650,11 +719,11 @@ footer{
             padding: 80px 20px;
             .content{
                 gap: 40px;
-            }
-            .item_list{
-                ul{
-                    padding: 24px 0;
-                    gap: 16px;
+                .item_list{
+                    ul{
+                        padding: 24px 0;
+                        gap: 16px;
+                    }
                 }
             }
         }
@@ -795,5 +864,106 @@ footer{
         .header_4{
             font-size: 40px;
         }
+    }
+
+    /* ######## Into Features Section ######## */
+    .into_features_section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .gradient_background{
+            height: 808.35px;
+        }
+        .intro_section{
+            align-items: center;
+            img{
+                width: 960px;
+            }
+        }
+        .features_section{
+            width: 1280px;
+            padding: 120px 20px;
+            align-items: center;
+            h2{
+                width: 612px;
+                text-align: center;
+            }
+            .content{
+                width: 1240px;
+                gap: 40px;
+                flex-direction: row;
+                justify-content: center;
+                img{
+                    width: 693px;
+                }
+                .feature_list{
+                    width: 507px;
+                    .item_list{
+                        ul{
+                            padding: 24px 0;
+                            gap: 16px;
+                        }
+                    }
+                    .button_primary{
+                        width: 181px;
+                    }
+                }
+            }
+        }
+    }
+    /* ######## Value Section ######## */
+    .value_section{
+        padding: 120px 20px;
+        .value_modules{
+            flex-direction: row;
+            .container{
+                width: 100%;
+            }
+        }
+    }
+    /* ######## Case Study Section ######## */
+    .case_study_section{
+        padding: 120px 20px;
+        .case_study_module{
+            width: 980px;
+            .content{
+                gap: 32px;
+            }
+            .button_secondary{
+                width: 150px;
+            }
+        }
+    }
+
+    /* ######## Blog Section ######## */
+    .blog_section{
+        padding: 0 20px;
+        align-items: center;
+        .article_body{
+            width: 620px;
+            .sticker_container{
+                top: 53.33px;
+                left: 4.56px;
+            }
+        }
+    }
+
+    /* ######## Textimonial Section ######## */
+    .testimonial_section{
+        padding: 120px 20px;
+        .content{
+            .quote{
+                padding: 0 105px;
+                gap: 56px;
+                .name_role{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    /* ######## Call To Action ######## */
+    .call_to_action{
+        padding: 120px 20px;
     }
 }
