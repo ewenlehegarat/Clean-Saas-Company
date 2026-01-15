@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+/* ######## Global ######## */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+
+    /* #### Color #### */
+    --Paragraph_1: #000000;
+    --Paragraph_2: #6C6C6C;
+    --Divider: #DBE0EC;
+    --Background_2: #F6F8FB;
+    --Background_1: #FFFFFF;
+    --Background_3: linear-gradient(#A8D3FF , #FFF4DF);
+    --Link: #2683EB;
+    --Backgorund_4: #FFF546;
+    --Paragraph_3: #66640F;
+
+    /* #### Line weight #### */
+    --Regular: 400;
+    --Medium: 500;
+}
+
+
+/* ######## Body ######## */
+body{
+    color: var(--Paragraph_1);
+    a{
+        color: var(--Paragraph_1);
+    }
+    
+    /* #### h1 #### */
+    .header_1{
+        font-family: 'Source Serif Pro';
+        font-weight: var(--Regular);
+        font-size: 36px;
+        letter-spacing: -4%;
+    }
+
+    /* #### h2 #### */
+    .header_2{
+        font-family: "Radio Canada Big", sans-serif;
+        font-weight: var(--Regular);
+        font-size: 36px;
+        letter-spacing: -2%;
+    }
+
+    /* #### h3 #### */
+    .header_3{
+        font-family: "Radio Canada Big", sans-serif;
+        font-weight: var(--Medium);
+        font-size: 32px;
+        letter-spacing: -3%;
+    }
+
+    /* #### h4 #### */
+    .header_4{
+        font-family: "Radio Canada Big", sans-serif;
+        font-weight: var(--Medium);
+        font-size: 24px;
+        letter-spacing: -3%;
+    }
+
+    /* #### p1 medium #### */
+    .paragraph_1_medium{
+        font-family: "Radio Canada Big", sans-serif;
+        font-weight: var(--Medium);
+        letter-spacing: -2%;
+        font-size: 18px;
+    }
+
+    /* #### p1 #### */
+    .paragraph_1{
+        font-family: "Radio Canada Big", sans-serif;
+        font-weight: var(--Regular);
+        font-size: 18px;
+        letter-spacing: -2%;
+    }
+
+    /* #### p2 #### */
+    .paragraph_2{
+        font-family: 'Source Serif Pro';
+        font-weight: var(--Regular);
+        font-size: 18px;
+        letter-spacing: -3%;
+        line-height: 120%;
+    }
+
+    /* #### Article paragraph #### */
+    .article_paragraph{
+        font-family: 'Source Serif Pro';
+        font-weight: var(--Regular);
+        font-size: 18px;
+        letter-spacing: -3%;
+        line-height: 140%;
+    }
+
+    /* #### nav link #### */
+    .nav_link{
+        font-family: "Radio Canada Big", sans-serif;
+        font-weight: var(--Medium);
+        font-size: 16px;
+        line-height: 120%;
+    }
+
+    /* #### button text #### */
+    .button_text{
+        font-family: 'Geist Mono', serif;
+        font-weight: var(--Medium);
+        font-size: 14px;
+    }
+
+    /* #### caption #### */
+    .caption{
+        font-family: 'Geist Mono', serif;
+        font-weight: var(--Regular);
+        font-size: 14px;
+        color: var(--Paragraph_2);
+    }
+
+    /* #### button primary #### */
+    .button_primary{
+        font-family: 'Geist Mono', serif;
+        padding: 16px;
+        background-color: var(--Paragraph_1);
+        color: white;
+        font-size: 14px;
+        font-weight: var(--Medium);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        .bullet{
+            width: 4px;
+            height: 4px;
+            background-color: var(--Background_1);
+            transition: opacity 800ms ease-in-out;
+        }
+        p{
+            transition: opacity 800ms ease-in-out;
+        }
+    }
+
+    .button_secondary{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background-color: var(--Paragraph_1);
+        color: white;
+        padding: 12px;
+        font-family: 'Geist Mono', serif;
+        font-weight: var(--Medium);
+        font-size: 14px;
+        p{
+            transition: opacity 800ms ease-in-out;
+        }
+    }
+
+    .button_primary:hover, .button_secondary:hover{
+        box-shadow: 0 4px 6px -4px #00000012, 0 8px 8px -4px #00000008;
+        p{
+            opacity: 80%;
+        }
+        .bullet{
+            opacity: 80%;
+        }
+    }
+}
+
+/* ######## Nav ######## */
+nav{
+    position: fixed;
+    width: 100%;
+    .navigation{
+        display: none;
+    }
+    .navigation_mobile{
+        transition: all 300ms cubic-bezier(0, 0, 0, 1);
+        .nav_top{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            height: 60px;
+            backdrop-filter: blur(64px);
+            background-color: #FFFFFF01;
+            .menu_icon{
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: opacity 300ms ease-in-out;
+                img{
+                    width: 14px;
+                    height: 14px;
+                    cursor: pointer;
+                }
+            }
+            .menu_icon:hover{
+                opacity: 50%;
+            }
+            .logo{
+                width: 122px;
+                cursor: pointer;
+            }
+            a{
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+        .dropdown_content{
+            padding: 0 20px 20px 20px;
+            display: none;
+            flex-direction: column;
+            gap: 24px;
+            box-shadow: 0 4px 6px -4px #00000012;
+            box-shadow: 0 8px 8px -4px #00000008;
+            background-color: var(--Background_1);
+            .menu_items{
+                .list_item{
+                    padding: 24px 0;
+                    border-bottom: 1px solid var(--Divider);
+                    cursor: pointer;
+                    a{
+                        transition: opacity 300ms ease-in-out;
+                    }
+                }
+                .list_item:hover{
+                    a{
+                        opacity: 55%;
+                    }
+                }
+            }
+            .button_primary{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+/* ######## Header ######## */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 120px 20px 40px 20px;
+    text-align: center;
+    .meta_data{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        p{
+            color: var(--Paragraph_2);
+        }
+    }
+}
+
+/* ######## Section ######## */
+.image{
+    padding: 0 20px;
+    img{
+        width: 100%;
+    }
+}
+
+/* ######## Main ######## */
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px 20px 0 20px;
+    .meta_data{
+        display: flex;
+        gap: 16px;
+        ul{
+            width: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            .paragraph_2{
+                color: var(--Paragraph_2);
+            }
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+}
+
+/* ######## Article ######## */
+.article_body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    .article_container{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+/* ######## Aside ######## */
+aside{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 20px;
+    .header{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .journal_list{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .journal_item{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .text{
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                .role_details{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    .details{
+                        display: flex;
+                        gap: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ######## Footer ######## */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 16px;
+    padding: 40px 20px 20px 20px;
+    background-color: var(--Backgorund_4);
+    color: var(--Paragraph_3);
+    text-align: center;
+    .footer_header{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .footer_links{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            a{
+                color: var(--Paragraph_3);
+                transition: opacity 300ms ease-in-out;
+            }
+            a:hover{
+                opacity: 80%;
+            }
+        }
+    }
+    .footer_image{
+        opacity: 90%;
+        mix-blend-mode: multiply;
+        height: 120px;
+        object-fit: cover;
+    }
+    .logo_container{
+        img{
+            height: 55.11px;
+        }
+    }
+}
+
+@media screen and (min-width: 800px){
+    /* ######## Nav ######## */
+    nav{
+        .navigation{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(64px);
+            background-color: #FFFFFF01;
+            .nav_item{
+                display: flex;
+                gap: 20px;
+                a{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--Paragraph_1);
+                    cursor: pointer;
+                    transition: opacity 300ms ease-in-out;
+                }
+                a:hover{
+                    opacity: 65%;
+                }
+                a:nth-child(5){
+                    gap: 4px;
+                    .arrow{
+                        width: 14px;
+                        height: 19px;
+                        display: flex;
+                        align-items: center;
+                        transition: all 700ms ease-in-out;
+                        img{
+                            width: 9px;
+                        }
+                    }
+                }
+                a:nth-child(5):hover{
+                    .arrow{
+                        transform: translateX(2.77px);
+                    }
+                }
+            }
+        }
+        .navigation_mobile{
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    /* ######## Body ######## */
+    body{
+        
+        /* #### h1 #### */
+        .header_1{
+            font-size: 64px;
+        }
+
+        /* #### h2 #### */
+        .header_2{
+            font-size: 64px;
+            letter-spacing: -3%;
+        }
+
+        /* #### h3 #### */
+        .header_3{
+            font-size: 48px;
+        }
+
+        /* #### h4 #### */
+        .header_4{
+            font-size: 32px;
+        }
+
+        /* #### p1 medium #### */
+        .paragraph_1_medium{
+            font-size: 20px;
+        }
+
+        /* #### p1 #### */
+        .paragraph_1{
+            font-size: 20px;
+        }
+
+        /* #### p2 #### */
+        .paragraph_2{
+            font-size: 20px;
+            letter-spacing: -4%;
+        }
+
+        /* #### Article paragraph #### */
+        .article_paragraph{
+            font-size: 20px;
+            letter-spacing: -4%;
+        }
+
+        /* #### button primary #### */
+        .button_primary{
+            font-family: 'Geist Mono', serif;
+            padding: 16px;
+            background-color: var(--Paragraph_1);
+            color: white;
+            font-size: 14px;
+            font-weight: var(--Medium);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            .bullet{
+                width: 4px;
+                height: 4px;
+                background-color: var(--Background_1);
+            }
+        }
+
+        .button_secondary{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--Paragraph_1);
+            color: white;
+            padding: 12px;
+            font-family: 'Geist Mono', serif;
+            font-weight: var(--Medium);
+            font-size: 14px;
+        }
+    }
+
+    /* ######## Header ######## */
+    header{
+        padding: 140px 20px 40px 20px;
+    }
+
+    /* ######## Main ######## */
+    main{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 80px 80px 0 80px;
+        .meta_data{
+            gap: 40px;
+            .content{
+                gap: 48px;
+            }
+        }
+    }
+
+    /* ######## Article ######## */
+    .article_body{
+        padding: 48px 80px 80px 80px;
+    }
+
+    /* ######## Aside ######## */
+    aside{
+        gap: 20px;
+        padding: 80px 20px;
+        .header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; 
+            align-items: center;
+            a{
+                text-decoration: underline;
+                align-self: flex-end;
+                justify-self: end;
+            }
+        }
+        .journal_list{
+            gap: 40px;
+        }
+    }
+
+    /* ######## Footer ######## */
+    footer{
+        padding: 20px;
+        gap: 20px;
+        .footer_header{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: auto;
+            .footer_links{
+                gap: 20px;
+            }
+        }
+        .footer_image{
+            height: 280px;
+        }
+        .logo_container{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1280px){
+    /* ######## Body ######## */
+    body{
+        
+        /* #### h1 #### */
+        .header_1{
+            font-size: 80px;
+        }
+
+        /* #### h2 #### */
+        .header_2{
+            font-size: 80px;
+            letter-spacing: -5%;
+        }
+
+        /* #### h3 #### */
+        .header_3{
+            font-size: 56px;
+        }
+
+        /* #### h4 #### */
+        .header_4{
+            font-size: 40px;
+        }
+    }
+
+    /* ######## Header ######## */
+    header{
+        padding: 140.40px 20px 80.40px 20px;
+    }
+
+    /* ######## Main ######## */
+    main{
+        flex-direction: row;
+        gap: 32px;
+        padding: 80px 100px;
+        .meta_data{
+            width: 200px;
+            display: flex;
+            gap: 40px;
+            .content{
+                gap: 48px;
+            }
+        }
+    }
+
+    /* ######## Article ######## */
+    .article_body{
+        flex-direction: row;
+        justify-content: end;
+        padding: 48px 100px 80px 100px;
+        margin-left: 64px;
+        .article_container{
+            gap: 48px;
+            width: 740px;
+        }
+    }
+
+    /* ######## Aside ######## */
+    aside{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 20px;
+        .journal_list{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            .journal_item{
+                width: 100%;
+                img{
+                    width: 100%;
+                    height: 234.23px;
+                }
+            }
+        }
+    }
+}
