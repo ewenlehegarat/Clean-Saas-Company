@@ -7,6 +7,19 @@ jouralitemText.forEach(itemText => {
     })
 });
 
+const nav = document.querySelector('nav')
+
+const observerNav = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add("view");
+            }, 500);
+        }
+    });
+}, {});
+observerNav.observe(nav);
+
 if(window.innerWidth < 800){
     const menuIcon = document.querySelector('.menu_icon');
     const menuIconImg = document.querySelector('.menu_icon img');

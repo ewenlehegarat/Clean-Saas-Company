@@ -183,6 +183,10 @@ body{
 nav{
     position: fixed;
     width: 100%;
+    opacity: 0;
+    translate: 0 -60px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+
     .navigation{
         display: none;
     }
@@ -257,6 +261,11 @@ nav{
     }
 }
 
+nav.nav_view{
+    opacity: 1;
+    translate: 0; 
+}
+
 
 /* ######## Into Features Section ######## */
 .into_features_section{
@@ -270,15 +279,11 @@ nav{
         left: 0;
     }
     .intro_section{
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-        padding: 120px 20px 0 20px;
-        text-align: center;
         .intro_content{
             display: flex;
             flex-direction: column;
             gap: 24px;
+        
             .header_text{
                 display: flex;
                 flex-direction: column;
@@ -312,6 +317,11 @@ nav{
                 }
             }
         }
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding: 120px 20px 0 20px;
+        text-align: center;
     }
     .features_section{
         display: flex;
@@ -325,6 +335,9 @@ nav{
             display: flex;
             flex-direction: column;
             gap: 24px;
+            opacity: 0;
+            translate: 0 -60px;
+            transition: opacity 600ms cubic-bezier(0, 0, 0, 1) 500ms, translate 600ms cubic-bezier(0, 0, 0, 1) 500ms;
             .feature_list{
                 display: flex;
                 flex-direction: column;
@@ -349,6 +362,52 @@ nav{
             }
         }
     }
+}
+
+.intro_content{
+    opacity: 0;
+    translate: 0 150px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.intro_content.intro_view{
+    opacity: 1;
+    translate: 0; 
+}
+
+.hero_image{
+    opacity: 0;
+    translate: 0 50px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1), scale 600ms cubic-bezier(0, 0, 0, 1);
+    scale: 0.5;
+}
+
+.hero_image.hero_view{
+    opacity: 1;
+    translate: 0;
+    scale: 1;
+}
+
+.everything_text{
+    opacity: 0;
+    translate: 0 50px;
+    transition: translate 600ms cubic-bezier(0, 0, 0, 1), opacity 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.everything_text.every_view{
+    opacity: 1;
+    translate: 0;
+}
+
+.features_section .content{
+    opacity: 0;
+    translate: 0 150px;
+    transition: translate 600ms cubic-bezier(0, 0, 0, 1), opacity 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.features_section .content.content_view{
+    opacity: 1;
+    translate: 0;   
 }
 
 /* ######## Value Section ######## */
@@ -392,6 +451,17 @@ nav{
             }
         }
     }
+}
+
+.value_modules{
+    opacity: 0;
+    translate: 0 50px;
+    transition: translate 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.value_modules.value_view{
+    opacity: 1;
+    translate: 0;
 }
 
 
@@ -473,12 +543,8 @@ nav{
                 border-top: 1px solid var(--Divider);
             }
         }
-        .sticker_container{
-            display: none;
-        }
     }
 }
-
 
 /* ######## Textimonial Section ######## */
 .testimonial_section{

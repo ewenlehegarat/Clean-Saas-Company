@@ -37,3 +37,16 @@ if(window.innerWidth < 800){
 }else{
     forecastImage.src = "img/Forecast_pc_image.png";
 }
+
+const nav = document.querySelector('nav')
+
+const observerNav = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add("view");
+            }, 500);
+        }
+    });
+}, {});
+observerNav.observe(nav);
