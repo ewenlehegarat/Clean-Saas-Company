@@ -100,6 +100,18 @@ const observerBlog = new IntersectionObserver((entries) => {
 }, {});
 observerBlog.observe(valueBlog);
 
+const stickerContainer = document.querySelector('.sticker_container');
+const observerSticker = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add("sticker_view");
+            }, 600);
+        }
+    });
+});
+observerSticker.observe(stickerContainer);
+
 const testimonial = document.querySelector('.testimonial_section .content img')
 const observerTesti = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

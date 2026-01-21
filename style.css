@@ -576,6 +576,21 @@ nav.nav_view{
     translate: 0;
 }
 
+.sticker_container{
+    opacity: 0;
+    scale: .75;
+    translate: 0 50px;
+    transform: rotate(60deg);
+    transition: all 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.sticker_container.sticker_view{
+    opacity: 1;
+    scale: 1;
+    translate: 0;
+    transform: rotate(0deg);
+}
+
 /* ######## Textimonial Section ######## */
 .testimonial_section{
     display: flex;
