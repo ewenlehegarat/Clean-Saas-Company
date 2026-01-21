@@ -181,6 +181,7 @@ body{
 
 /* ######## Nav ######## */
 nav{
+    z-index: 3;
     position: fixed;
     width: 100%;
     opacity: 0;
@@ -456,7 +457,7 @@ nav.nav_view{
 .value_modules{
     opacity: 0;
     translate: 0 50px;
-    transition: translate 600ms cubic-bezier(0, 0, 0, 1);
+    transition: translate 600ms cubic-bezier(0, 0, 0, 1), opacity 600ms cubic-bezier(0, 0, 0, 1);
 }
 
 .value_modules.value_view{
