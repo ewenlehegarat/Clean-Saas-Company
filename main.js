@@ -106,7 +106,7 @@ const observerSticker = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             setTimeout(() => {
                 entry.target.classList.add("sticker_view");
-            }, 600);
+            }, 300);
         }
     });
 });
