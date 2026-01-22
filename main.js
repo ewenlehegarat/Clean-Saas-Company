@@ -134,8 +134,6 @@ const observerQuote = new IntersectionObserver((entries) => {
 });
 observerQuote.observe(testiQuote);
 
-
-
 if(window.innerWidth < 800){
     const menuIcon = document.querySelector('.menu_icon');
     const menuIconImg = document.querySelector('.menu_icon img');
@@ -146,19 +144,19 @@ if(window.innerWidth < 800){
 
     menuIcon.addEventListener('click', (event) => {
         event.preventDefault();
+
+        dropdownContent.classList.toggle('is-open');
+
         if (isClosed) {
-            dropdownContent.style.display = 'flex';
-            menuIconImg.src = 'img/Icon_close.png';
             navTop.style.backgroundColor = '#FFFFFF';
-        } else {
-            dropdownContent.style.display = 'none';
-            menuIconImg.src = 'img/Vector.png';
+            menuIconImg.style.rotate = '180deg'
+        }else{
             navTop.style.backgroundColor = '#FFFFFF01';
+            menuIconImg.style.rotate = '-135deg'
         }
 
         isClosed = !isClosed;
     });
-
 
     buttonExplore.addEventListener('click', ()=>{
         window.scrollTo({
@@ -175,6 +173,20 @@ if(window.innerWidth > 800 && window.innerWidth < 1280){
             behavior: 'smooth'
         })
     })
+
+    gsap.set(".sticker_container", {
+        x: 0,
+        y: 0,
+        rotation: 0,
+        scale: 1,
+        transformOrigin: "center center"
+    });
+
+    Draggable.create(".sticker_container", {
+        type: "x,y",
+        inertia: true,
+        bounds: null
+    });
 }
 
 if(window.innerWidth > 1280){
@@ -184,4 +196,19 @@ if(window.innerWidth > 1280){
             behavior: 'smooth'
         })
     })
+
+    gsap.set(".sticker_container", {
+        x: 0,
+        y: 0,
+        rotation: 0,
+        scale: 1,
+        transformOrigin: "center center"
+    });
+
+    Draggable.create(".sticker_container", {
+        type: "x,y",
+        inertia: true,
+        bounds: null
+    });
+
 }

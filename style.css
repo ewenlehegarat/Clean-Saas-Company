@@ -192,7 +192,6 @@ nav{
         display: none;
     }
     .navigation_mobile{
-        transition: all 300ms cubic-bezier(0, 0, 0, 1);
         .nav_top{
             display: flex;
             justify-content: space-between;
@@ -211,6 +210,8 @@ nav{
                     width: 14px;
                     height: 14px;
                     cursor: pointer;
+                    rotate: -135deg;
+                    transition: rotate 300ms cubic-bezier(0, 0, 0, 1);
                 }
             }
             .menu_icon:hover{
@@ -234,12 +235,17 @@ nav{
         }
         .dropdown_content{
             padding: 0 20px 20px 20px;
-            display: none;
+            display: flex;
             flex-direction: column;
             gap: 24px;
             box-shadow: 0 4px 6px -4px #00000012;
             box-shadow: 0 8px 8px -4px #00000008;
             background-color: var(--Background_1);
+            opacity: 0;
+            transform: translateY(-12px);
+            pointer-events: none;
+            transition: opacity 300ms cubic-bezier(0, 0, 0, 1), transform 300ms cubic-bezier(0, 0, 0, 1);
+
             .menu_items{
                 .list_item{
                     padding: 24px 0;
@@ -258,6 +264,11 @@ nav{
             .button_primary{
                 font-size: 20px;
             }
+        }
+        .dropdown_content.is-open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
     }
 }
@@ -533,11 +544,14 @@ nav.nav_view{
         display: flex;
         flex-direction: column;
         gap: 24px;
+        position: relative;
         .journal_list{
             .journal_item{
+                transition: translate 300ms ease-in-out;
                 display: flex;
                 gap: 16px;
                 border-bottom: 1px solid var(--Divider);
+                cursor: pointer;
                 .content{
                     width: 100%;
                     display: flex;
@@ -577,11 +591,27 @@ nav.nav_view{
 }
 
 .sticker_container{
+    display: none;
+    position: absolute;
     opacity: 0;
     scale: .75;
     translate: 0 50px;
     transform: rotate(60deg);
     transition: all 600ms cubic-bezier(0, 0, 0, 1);
+    width: 339.33px;
+    height: 130px;
+    cursor: grab;
+    user-select: none;
+    top: -114.47px;
+    left: -173.7px;
+    img{
+        pointer-events: none;
+        width: 100%;
+    }
+}
+
+.sticker_container:active{
+    cursor: grabbing;
 }
 
 .sticker_container.sticker_view{
@@ -867,6 +897,7 @@ footer{
             }
         }
     }
+
     /* ######## Value Section ######## */
     .value_section{
         padding: 80px 20px;
@@ -877,6 +908,7 @@ footer{
             gap: -8px;
         }
     }
+
     /* ######## Case Study Section ######## */
     .case_study_section{
         padding: 80px 20px;
@@ -901,16 +933,20 @@ footer{
 
     /* ######## Blog Section ######## */
     .blog_section{
-        position: relative;
         padding: 40px 20px 0 20px;
         gap: 40px;
         .article_body{
+            position: relative;
+            margin: 0 70px;
             .journal_list{
                 .journal_item{
                     .content{
                         flex-direction: row;
                         gap: auto;
                     }
+                }
+                .journal_item:hover{
+                    translate: 10px 0;
                 }
             }
             .button_secondary{
@@ -919,9 +955,6 @@ footer{
             }
             .sticker_container{
                 display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
             }
         }
     }
@@ -977,6 +1010,7 @@ footer{
             }
         }
     }
+
 }
 
 @media screen and (min-width: 1280px){
@@ -1050,6 +1084,7 @@ footer{
             }
         }
     }
+
     /* ######## Value Section ######## */
     .value_section{
         padding: 120px 20px;
@@ -1060,6 +1095,7 @@ footer{
             }
         }
     }
+
     /* ######## Case Study Section ######## */
     .case_study_section{
         padding: 120px 20px;
@@ -1079,10 +1115,12 @@ footer{
         padding: 0 20px;
         align-items: center;
         .article_body{
-            width: 620px;
+            margin: 0 310px;
             .sticker_container{
-                top: 53.33px;
-                left: 4.56px;
+                width: 400px;
+                height: 154px;
+                top: -75.44px;
+                left: -276.67px;
             }
         }
     }
