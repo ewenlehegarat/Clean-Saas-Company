@@ -180,13 +180,17 @@ body{
 
 /* ######## Nav ######## */
 nav{
+    z-index: 3;
     position: fixed;
     width: 100%;
+    opacity: 0;
+    translate: 0 -60px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+
     .navigation{
         display: none;
     }
     .navigation_mobile{
-        transition: all 300ms cubic-bezier(0, 0, 0, 1);
         .nav_top{
             display: flex;
             justify-content: space-between;
@@ -201,10 +205,12 @@ nav{
                 justify-content: center;
                 align-items: center;
                 transition: opacity 300ms ease-in-out;
+                cursor: pointer;
                 img{
                     width: 14px;
                     height: 14px;
-                    cursor: pointer;
+                    rotate: -135deg;
+                    transition: rotate 300ms cubic-bezier(0, 0, 0, 1);
                 }
             }
             .menu_icon:hover{
@@ -234,6 +240,10 @@ nav{
             box-shadow: 0 4px 6px -4px #00000012;
             box-shadow: 0 8px 8px -4px #00000008;
             background-color: var(--Background_1);
+            opacity: 0;
+            transform: translateY(-12px);
+            transition: opacity 300ms cubic-bezier(0, 0, 0, 1), transform 300ms cubic-bezier(0, 0, 0, 1);
+
             .menu_items{
                 .list_item{
                     padding: 24px 0;
@@ -253,7 +263,17 @@ nav{
                 font-size: 20px;
             }
         }
+        .dropdown_content.is-open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
     }
+}
+
+nav.nav_view{
+    opacity: 1;
+    translate: 0; 
 }
 
 /* ######## Header ######## */
@@ -262,9 +282,17 @@ header{
     display: flex;
     align-items: center;
     padding-top: 60px;
+    opacity: 0;
+    translate: 0 80px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
     img{
         width: 100%;
     }
+}
+
+header.header_view{
+    opacity: 1;
+    translate: 0;
 }
 
 /* ######## Main ######## */
@@ -288,6 +316,8 @@ main{
             display: flex;
             flex-direction: column;
             gap: 20px;
+            cursor: pointer;
+            
             .text{
                 display: flex;
                 flex-direction: column;
@@ -302,8 +332,38 @@ main{
                     }
                 }
             }
+            p{
+                transition: opacity 300ms ease-in-out;
+            }
+        }
+        .journal_item:hover{
+            p{
+                opacity: 65%;
+            }
         }
     }
+}
+
+main h2{
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+    opacity: 0;
+    translate: 0 50px;
+}
+
+main h2.h2_view{
+    opacity: 1;
+    translate: 0;
+}
+
+main .journal_list{
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+    opacity: 0;
+    translate: 0 80px;
+}
+
+main .journal_list.journal_view{
+    opacity: 1;
+    translate: 0;
 }
 
 /* ######## Aside ######## */

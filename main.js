@@ -148,11 +148,15 @@ if(window.innerWidth < 800){
         dropdownContent.classList.toggle('is-open');
 
         if (isClosed) {
+            dropdownContent.style.display = 'flex'
             navTop.style.backgroundColor = '#FFFFFF';
             menuIconImg.style.rotate = '180deg'
         }else{
             navTop.style.backgroundColor = '#FFFFFF01';
             menuIconImg.style.rotate = '-135deg'
+            setTimeout(() => {
+                dropdownContent.style.display = 'none'
+            }, 300);
         }
 
         isClosed = !isClosed;
