@@ -117,12 +117,12 @@ if(window.innerWidth < 800){
     menuIcon.addEventListener('click', (event) => {
         event.preventDefault();
         if (isClosed) {
-            dropdownContent.style.display = 'flex';
-            menuIconImg.src = '/img/Icon_close.png';
+            dropdownContent.style.opacity = '1';
+            menuIconImg.style.rotate = '180deg'
             navTop.style.backgroundColor = '#FFFFFF';
         } else {
-            dropdownContent.style.display = 'none';
-            menuIconImg.src = '/img/Vector.png';
+            dropdownContent.style.opacity = '0';
+            menuIconImg.style.rotate = '-135deg'
             navTop.style.backgroundColor = '#FFFFFF01';
         }
 

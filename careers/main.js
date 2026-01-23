@@ -3,12 +3,11 @@ const jouralitemText = document.querySelectorAll('.journal_item .text')
 
 jouralitemText.forEach(itemText => {
     itemText.addEventListener('click', ()=>{
-        window.location.href = "/article/index.html"
+        window.location.href = "index.html"
     })
 });
 
 const nav = document.querySelector('nav')
-
 const observerNav = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -19,6 +18,28 @@ const observerNav = new IntersectionObserver((entries) => {
     });
 }, {});
 observerNav.observe(nav);
+
+const headerText = document.querySelector('.header_text')
+const observerHeaderText = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("view");
+        }
+    });
+}, {});
+observerHeaderText.observe(headerText);
+
+const jobListing = document.querySelector('.job_listing')
+const observerJobListing = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add("view");
+            }, 200);
+        }
+    });
+}, {});
+observerJobListing.observe(jobListing);
 
 if(window.innerWidth < 800){
     const menuIcon = document.querySelector('.menu_icon');

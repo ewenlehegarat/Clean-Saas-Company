@@ -1,4 +1,12 @@
 const buttonExplore = document.querySelector('.button_explore')
+const jouralItem = document.querySelectorAll('.journal_item')
+const forecastImage = document.querySelector('.forecast_image')
+
+jouralItem.forEach(item => {
+    item.addEventListener('click', ()=>{
+        window.location.href = "article/index.html"
+    })
+});
 
 const nav = document.querySelector('nav')
 const observerNav = new IntersectionObserver((entries) => {
@@ -112,7 +120,7 @@ const observerSticker = new IntersectionObserver((entries) => {
 });
 observerSticker.observe(stickerContainer);
 
-const testimonial = document.querySelector('.testimonial_section .content img')
+const testimonial = document.querySelector('.avatar_img')
 const observerTesti = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -181,7 +189,7 @@ if(window.innerWidth > 800 && window.innerWidth < 1280){
     gsap.set(".sticker_container", {
         x: 0,
         y: 0,
-        rotation: 0,
+        rotation: -7,
         scale: 1,
         transformOrigin: "center center"
     });
@@ -204,7 +212,7 @@ if(window.innerWidth > 1280){
     gsap.set(".sticker_container", {
         x: 0,
         y: 0,
-        rotation: 0,
+        rotation: -7,
         scale: 1,
         transformOrigin: "center center"
     });
