@@ -273,7 +273,7 @@ nav{
     }
 }
 
-nav.nav_view{
+nav.view{
     opacity: 1;
     translate: 0; 
 }
@@ -382,7 +382,7 @@ nav.nav_view{
     transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
 }
 
-.intro_content.intro_view{
+.intro_content.view{
     opacity: 1;
     translate: 0; 
 }
@@ -394,7 +394,7 @@ nav.nav_view{
     scale: 0.5;
 }
 
-.hero_image.hero_view{
+.hero_image.view{
     opacity: 1;
     translate: 0;
     scale: 1;
@@ -406,7 +406,7 @@ nav.nav_view{
     transition: translate 600ms cubic-bezier(0, 0, 0, 1), opacity 600ms cubic-bezier(0, 0, 0, 1);
 }
 
-.everything_text.every_view{
+.everything_text.view{
     opacity: 1;
     translate: 0;
 }
@@ -417,7 +417,7 @@ nav.nav_view{
     transition: translate 600ms cubic-bezier(0, 0, 0, 1), opacity 600ms cubic-bezier(0, 0, 0, 1);
 }
 
-.features_section .content.content_view{
+.features_section .content.view{
     opacity: 1;
     translate: 0;   
 }
@@ -471,7 +471,7 @@ nav.nav_view{
     transition: translate 600ms cubic-bezier(0, 0, 0, 1), opacity 600ms cubic-bezier(0, 0, 0, 1);
 }
 
-.value_section .header.header_view{
+.value_section .header.view{
     opacity: 1;
     translate: 0;
 }
@@ -482,7 +482,7 @@ nav.nav_view{
     transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
 }
 
-.value_modules.value_view{
+.value_modules.view{
     opacity: 1;
     translate: 0;
 }
@@ -522,7 +522,7 @@ nav.nav_view{
     transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
 }
 
-.case_study_module.case_view{
+.case_study_module.view{
     opacity: 1;
     translate: 0;
 }
@@ -585,7 +585,7 @@ nav.nav_view{
     }
 }
 
-.blog_section.blog_view{
+.blog_section.view{
     opacity: 1;
     translate: 0;
 }
@@ -614,7 +614,7 @@ nav.nav_view{
     cursor: grabbing;
 }
 
-.sticker_container.sticker_view{
+.sticker_container.view{
     opacity: 1;
     scale: 1;
     translate: 0;
@@ -660,7 +660,7 @@ nav.nav_view{
     transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
 }
 
-.testimonial_section .content img.testi_view{
+.testimonial_section .content img.view{
     opacity: 1;
     translate: 0;
 }
@@ -671,7 +671,7 @@ nav.nav_view{
     transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
 }
 
-.quote.quote_view{
+.quote.view{
     opacity: 1;
     translate: 0;
 }

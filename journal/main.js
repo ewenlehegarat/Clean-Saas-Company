@@ -6,7 +6,7 @@ const observerNav = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         setTimeout(() =>{
             if (entry.isIntersecting) {
-                entry.target.classList.add("nav_view");
+                entry.target.classList.add("view");
             }
         }, 500);
     });
@@ -17,7 +17,7 @@ const header = document.querySelector('header')
 const observerHeader = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("header_view");
+            entry.target.classList.add("view");
         }
     });
 }, {});
@@ -28,7 +28,7 @@ const observerMain = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         setTimeout(() =>{
             if (entry.isIntersecting) {
-                entry.target.classList.add("h2_view");
+                entry.target.classList.add("view");
             }
         }, 200);
     });
@@ -40,7 +40,7 @@ const observerJournal = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         setTimeout(() =>{
             if (entry.isIntersecting) {
-                entry.target.classList.add("journal_view");
+                entry.target.classList.add("view");
             }
         }, 200);
     });

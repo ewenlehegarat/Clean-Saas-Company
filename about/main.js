@@ -52,6 +52,60 @@ const observerValueHeader = new IntersectionObserver((entries) => {
 }, {});
 observerValueHeader.observe(valuesHeader);
 
+const valuesModules = document.querySelector('.value_modules')
+const observerModules = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        setTimeout(() => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("view");
+            }
+        }, 600);
+    });
+}, {});
+observerModules.observe(valuesModules);
+
+const eunjiImage = document.querySelector('.eunji_image')
+const observerEunji = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("view");
+        }
+    });
+}, {});
+observerEunji.observe(eunjiImage);
+
+const FoundersQuote = document.querySelector('.founders_story_section .quote')
+const observerFoundersQuote = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        setTimeout(() => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("view");
+            }
+        }, 200);
+    });
+}, {});
+observerFoundersQuote.observe(FoundersQuote);
+
+const teamsectionH2 = document.querySelector('.team_section h2')
+const observerTeamsectionH2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("view");
+        }
+    });
+}, {});
+observerTeamsectionH2.observe(teamsectionH2);
+
+const teamTable = document.querySelector('.table')
+const observerTeamTable = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("view");
+        }
+    });
+}, {});
+observerTeamTable.observe(teamTable);
+
 if(window.innerWidth < 800){
     const menuIcon = document.querySelector('.menu_icon');
     const menuIconImg = document.querySelector('.menu_icon img');

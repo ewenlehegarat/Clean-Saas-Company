@@ -5,7 +5,7 @@ const observerNav = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         setTimeout(() =>{
             if (entry.isIntersecting) {
-                entry.target.classList.add("nav_view");
+                entry.target.classList.add("view");
             }
         }, 500);
     });
@@ -16,7 +16,7 @@ const introContent = document.querySelector('.intro_content')
 const observerIntro = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("intro_view");
+            entry.target.classList.add("view");
         }
     });
 }, {});
@@ -27,7 +27,7 @@ const observerHero = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         setTimeout(() =>{
             if (entry.isIntersecting) {
-                entry.target.classList.add("hero_view");
+                entry.target.classList.add("view");
             }
         }, 200);
     });
@@ -39,7 +39,7 @@ const observerEvery = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         setTimeout(() =>{
             if (entry.isIntersecting) {
-                entry.target.classList.add("every_view");
+                entry.target.classList.add("view");
             }
         }, 300);
     });
@@ -51,7 +51,7 @@ const observerContent = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         setTimeout(() =>{
             if (entry.isIntersecting) {
-                entry.target.classList.add("content_view");
+                entry.target.classList.add("view");
             }
         }, 600);
     });
@@ -62,7 +62,7 @@ const valueHeader = document.querySelector('.value_section .header')
 const observerHeader = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("header_view");
+            entry.target.classList.add("view");
         }
     });
 }, {});
@@ -73,7 +73,7 @@ const observerValue = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         setTimeout(() =>{
             if (entry.isIntersecting) {
-                entry.target.classList.add("value_view");
+                entry.target.classList.add("view");
             }
         }, 600);
     });
@@ -84,7 +84,7 @@ const valueCase = document.querySelector('.case_study_module')
 const observerCase = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("case_view");
+            entry.target.classList.add("view");
         }
     });
 }, {});
@@ -94,7 +94,7 @@ const valueBlog = document.querySelector('.blog_section')
 const observerBlog = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("blog_view");
+            entry.target.classList.add("view");
         }
     });
 }, {});
@@ -105,7 +105,7 @@ const observerSticker = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             setTimeout(() => {
-                entry.target.classList.add("sticker_view");
+                entry.target.classList.add("view");
             }, 300);
         }
     });
@@ -116,7 +116,7 @@ const testimonial = document.querySelector('.testimonial_section .content img')
 const observerTesti = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("testi_view");
+            entry.target.classList.add("view");
         }
     });
 }, {});
@@ -127,7 +127,7 @@ const observerQuote = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             setTimeout(() => {
-                entry.target.classList.add("quote_view");
+                entry.target.classList.add("view");
             }, 600);
         }
     });

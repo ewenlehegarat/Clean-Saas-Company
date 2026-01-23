@@ -358,6 +358,17 @@ header img.view, header .content.view{
     translate: 0;
 }
 
+.value_modules{
+    opacity: 0;
+    translate: 0 50px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.value_modules.view{
+    opacity: 1;
+    translate: 0;
+}
+
 /* ######## Founders Story Section ######## */
 .founders_story_section{
     display: flex;
@@ -394,6 +405,28 @@ header img.view, header .content.view{
         top: 0px;
         left: 0px;
     }
+}
+
+.eunji_image{
+    opacity: 0;
+    translate: 0 80px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.eunji_image.view{
+    opacity: 1;
+    translate: 0;
+}
+
+.founders_story_section .quote{
+    opacity: 0;
+    translate: 0 80px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.founders_story_section .quote.view{
+    opacity: 1;
+    translate: 0;
 }
 
 /* ######## Team Section ######## */
@@ -448,6 +481,28 @@ header img.view, header .content.view{
             }
         }
     }
+}
+
+.team_section h2{
+    opacity: 0;
+    translate: 0 80px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.team_section h2.view{
+    opacity: 1;
+    translate: 0;
+}
+
+.table{
+    opacity: 0;
+    translate: 0 80px;
+    transition: opacity 600ms cubic-bezier(0, 0, 0, 1), translate 600ms cubic-bezier(0, 0, 0, 1);
+}
+
+.table.view{
+    opacity: 1;
+    translate: 0;
 }
 
 /* ######## Call To Action ######## */
@@ -656,6 +711,7 @@ footer{
 
     /* ######## Founders Story Section ######## */
     .founders_story_section{
+        position: relative;
         padding: 0 20px 80px 20px;
         .content{
             flex-direction: row;
@@ -666,8 +722,29 @@ footer{
             }
         }
         .sticker_container{
-            display: none;
+            width: 234.74px;
+            height: 115.79px;
+            display: block;
+            position: absolute;
+            rotate: -7deg;
+            top: -94px;
+            left: -71.18px;
         }
+    }
+
+    .sticker_container{
+        opacity: 0;
+        translate: 0 50px;
+        scale: .75;
+        rotate: 60deg;
+        transition: all 600ms cubic-bezier(0, 0, 0, 1);
+    }
+
+    .sticker_container.view{
+        opacity: 1;
+        translate: 0;
+        scale: 1;
+        rotate: -7deg;
     }
 
     /* ######## Team Section ######## */
@@ -800,7 +877,6 @@ footer{
             }
         }
         /* .sticker_container{
-            display: block;
         } */
     }
 
@@ -811,6 +887,6 @@ footer{
 
     /* ######## Call To Action ######## */
     .call_to_action{
-        padding: 12px 20px;
+        padding: 120px 20px;
     }
 }
